@@ -1,0 +1,123 @@
+@font-face {
+    font-family: 'Inter';
+    src: url('../fonts/Inter-VariableFont_opsz\,wght.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../fonts/OpenSans-VariableFont_wdth\,wght.ttf');
+}
+
+@font-face {
+    font-family: 'Hammersmith';
+    src: url('../fonts/HammersmithOne-Regular.ttf');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    font-family: 'Inter', sans-serif;
+}
+
+:root {
+    --c0: #000000;
+    --c1: #FFFFFF;
+    --c2: #FF863A;
+    --c3: #2E4458;
+    --c4: #d87232;
+    --c5: #3d5a75;
+}
+
+body {
+    min-height: 100vh;
+    background-color: rgb(0, 0, 0);
+    color: var(--c1);
+    background-image: url('../img/gruas.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+header {
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    background-color: rgb(217, 217, 217, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9px 51px;
+    border-radius: 50px;
+
+    & div.logo-box,
+    div.nav-box ul,
+    div.btn-box {
+        display: flex;
+        align-items: center;
+    }
+
+    & div.logo-box,
+    div.btn-box {
+        gap: 10px;
+    }
+
+    & div.logo-box {
+        & img {
+            height: 60px;
+        }
+
+        & h1 {
+            font-family: 'Open Sans';
+            font-size: 1.25rem;
+            color: var(--c2);
+            line-height: 1.30rem;
+
+            & span {
+                display: block;
+                color: var(--c3);
+            }
+        }
+    }
+
+    & div.nav-box ul {
+        gap: 22px;
+
+        & a {
+            color: var(--c0);
+        }
+    }
+
+    & div.btn-box button {
+        padding: 8px 15px;
+        border-radius: 50px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+        transition: .3s ease-in;
+
+        &:hover {
+            transform: scale(0.97);
+        }
+        
+        &.sing-up {
+            background-color: var(--c3);
+            color: var(--c1);
+
+            &:hover {
+                background-color: var(--c5);
+            }
+        }
+        
+        &.login {
+            background-color: var(--c2);
+            
+            &:hover {
+                background-color: var(--c4);
+            }
+        }
+    }
+}
