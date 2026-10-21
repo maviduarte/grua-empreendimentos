@@ -19,6 +19,7 @@
     box-sizing: border-box;
     text-decoration: none;
     list-style: none;
+    user-select: none;
     font-family: 'Inter', sans-serif;
 }
 
@@ -69,16 +70,26 @@ header {
         & img {
             height: 60px;
         }
-
+        
         & h1 {
             font-family: 'Open Sans';
             font-size: 1.25rem;
             color: var(--c2);
             line-height: 1.30rem;
-
+            
             & span {
                 display: block;
                 color: var(--c3);
+            }
+        }
+        
+        &:hover {
+            h1 {
+                color: var(--c3);
+
+                & span {
+                    color: var(--c2);
+                }
             }
         }
     }
@@ -87,7 +98,30 @@ header {
         gap: 22px;
 
         & a {
+            position: relative;
             color: var(--c0);
+
+            &:hover {
+                font-weight: 600;
+            }
+
+            &::after {
+                content: "";
+                position: absolute;
+                width: 100%;
+                height: 2px;
+                bottom: 0;
+                left: 0;
+                background-color: var(--c2);
+                transform: scaleX(0);
+                transform-origin: bottom right;
+                transition: transform .3s ease-out;
+            }
+
+            &:hover::after {
+                transform: scaleX(1);
+                transform-origin: bottom left;
+            }
         }
     }
 
@@ -118,6 +152,70 @@ header {
             &:hover {
                 background-color: var(--c4);
             }
+        }
+    }
+}
+
+main {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+    & section#hero {
+        display: flex;
+        gap: 82px;
+        margin: 5rem 4rem 0 4rem;
+        
+        
+        & div.hero-section,
+        div.hero-title {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        & div.hero-section {
+            gap: 60px;
+
+            & div.hero-title {
+                gap: 25px;
+                max-width: 428px;
+
+                & h1 {
+                    font-size: 2.5rem;
+                    font-weight: 800;
+
+                    & span.color {
+                        color: var(--c2);
+                    }
+
+                    & span.line {
+                        text-decoration: underline;
+                        text-underline-offset: 6px;
+                        text-decoration-color: var(--c2);
+                        text-decoration-thickness: 2px; 
+                    }
+                }
+
+                & p {
+                    font-size: 1.13rem;
+                }
+            }
+
+            & button {
+                font-size: 1.25rem;
+                padding: 10px 23px;
+                border-radius: 50px;
+                border: none;
+                background-color: var(--c2);
+            }
+        }
+
+        & img {
+            height: 394px;
+            border-radius: 50px;
+            /* margin-right: 4.05rem; */
+            opacity: 85%;
         }
     }
 }
