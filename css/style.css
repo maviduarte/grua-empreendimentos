@@ -72,28 +72,28 @@ header {
         & img {
             height: 60px;
         }
-        
+
         & h1 {
             font-family: 'Open Sans';
             font-size: 1.25rem;
             color: var(--c2);
             line-height: 1.30rem;
-            
+
             & span {
                 display: block;
                 color: var(--c3);
             }
         }
-        
+
         &:hover {
             h1 {
                 color: var(--c3);
-                
+
                 & span {
                     color: var(--c2);
                 }
             }
-            
+
             & img {
                 transform: scale(1.07);
 
@@ -143,7 +143,7 @@ header {
         &:hover {
             transform: scale(0.97);
         }
-        
+
         &.sing-up {
             background-color: var(--c3);
             color: var(--c1);
@@ -152,10 +152,10 @@ header {
                 background-color: var(--c5);
             }
         }
-        
+
         &.login {
             background-color: var(--c2);
-            
+
             &:hover {
                 background-color: var(--c4);
             }
@@ -167,8 +167,7 @@ main {
     min-height: 100vh;
     display: flex;
     align-items: center;
-    margin-top: 2rem;
-    
+
     & section#hero {
         width: 100%;
         display: flex;
@@ -177,13 +176,13 @@ main {
         margin: 0 4rem;
         /* margin-top: clamp(4rem, 10vw, 3rem); */
         gap: 82px;
-        
+
         & div.hero-section,
         div.hero-title {
             display: flex;
             flex-direction: column;
         }
-        
+
         & div.hero-section {
             gap: 60px;
 
@@ -203,7 +202,7 @@ main {
                         text-decoration: underline;
                         text-underline-offset: 6px;
                         text-decoration-color: var(--c2);
-                        text-decoration-thickness: 2px; 
+                        text-decoration-thickness: 2px;
                     }
                 }
 
@@ -233,29 +232,67 @@ main {
 
         & div.img-box {
             position: relative;
-            
+
             & img {
-                height: 394px;
-                
+
                 &.flat-img {
+                    height: 394px;
                     border-radius: 50px;
                     opacity: 85%;
+                    transform: translate(0, 0);
                     transition: transform .5s ease-out;
-                    
-                    &:hover {
+
+                    /* &:hover {
                         transform: translateX(-20rem);
-                    }
+                    } */
+                }
+
+                &.flat-img.fixed {
+                    transform: translateX(-22rem);
+                }
+
+                &.back-img {
+                    height: 300px;
+                    position: absolute;
+                    top: 50px;
+                    left: -4px;
+                    z-index: -1;
+                    display: none;
+                    border-radius: 50%;
                 }
                 
-                &.back-img {
-                    position: absolute;
-                    top: 0;
-                    left: -9px;
-                    z-index: -1;
-                    opacity: 90%;
+                &.back-img.show-in {
+                    display: block;
+                    animation: show-in .6s forwards;
+                    box-shadow: rgba(255, 255, 255, 0.2) 0px 7px 29px 0px, rgba(0, 0, 0, 0.24) 0px 3px 8px;
                 }
+                &.back-img.show-ou {
+                    display: block;
+                    animation: show-ou .3s forwards;
+                }
+
             }
         }
 
+    }
+}
+
+@keyframes show-in {
+    to {
+        transform: translateX(2rem);
+    }
+}
+
+@keyframes show-ou {
+    50% {
+        transform: translateX(-2.5rem);
+    }
+
+    70% {
+        transform: scale(0.5);
+    }
+
+    100% {
+        transform: scale(0);
     }
 }
