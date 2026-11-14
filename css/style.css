@@ -84,10 +84,17 @@ header {
     }
 
     & div.logo-box {
+
+        & img,
+        h1,
+        h1 span {
+            transition: .3s ease-in;
+        }
+        
         & img {
             height: 60px;
         }
-
+        
         & h1 {
             font-family: 'Open Sans';
             font-size: 1.25rem;
@@ -123,6 +130,7 @@ header {
             position: relative;
             color: var(--c0);
             font-weight: 500;
+            transition: .3s ease-in;
 
             &:hover {
                 color: var(--c6);
@@ -248,7 +256,7 @@ main {
                     color: var(--c1);
                     padding: 10px 0;
                     background-color: var(--c2);
-                    transition: transform .3s ease-in;
+                    transition: .3s ease-in;
 
                     &:hover {
                         color: var(--c0);
