@@ -8,8 +8,6 @@ A Grua Empreendimentos conecta pessoas e negócios ao universo da construção c
 
 ## 🛠️ Tecnologias utilizadas
 
-> Ajuste conforme o que você realmente usou.
-
 - HTML5
 - CSS3
 - JavaScript
